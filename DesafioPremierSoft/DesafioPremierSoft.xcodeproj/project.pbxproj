@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9070B646271F67A5007B571F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B645271F67A5007B571F /* AppDelegate.swift */; };
-		9070B64A271F67A5007B571F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B649271F67A5007B571F /* ViewController.swift */; };
 		9070B64F271F67A6007B571F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9070B64E271F67A6007B571F /* Assets.xcassets */; };
 		9070B652271F67A6007B571F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9070B650271F67A6007B571F /* LaunchScreen.storyboard */; };
+		9070B67A271F6A7E007B571F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B678271F6A7E007B571F /* ViewController.swift */; };
+		9070B67B271F6A7E007B571F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9070B679271F6A7E007B571F /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,12 +34,13 @@
 /* Begin PBXFileReference section */
 		9070B642271F67A5007B571F /* DesafioPremierSoft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioPremierSoft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9070B645271F67A5007B571F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9070B649271F67A5007B571F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9070B64E271F67A6007B571F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9070B651271F67A6007B571F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9070B653271F67A6007B571F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9070B658271F67A7007B571F /* DesafioPremierSoftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioPremierSoftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9070B662271F67A7007B571F /* DesafioPremierSoftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioPremierSoftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9070B678271F6A7E007B571F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9070B679271F6A7E007B571F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,21 +89,38 @@
 		9070B644271F67A5007B571F /* DesafioPremierSoft */ = {
 			isa = PBXGroup;
 			children = (
-				9070B675271F680F007B571F /* New Group */,
-				9070B645271F67A5007B571F /* AppDelegate.swift */,
-				9070B649271F67A5007B571F /* ViewController.swift */,
-				9070B64E271F67A6007B571F /* Assets.xcassets */,
-				9070B650271F67A6007B571F /* LaunchScreen.storyboard */,
-				9070B653271F67A6007B571F /* Info.plist */,
+				9070B677271F69FC007B571F /* Scenes */,
+				9070B675271F680F007B571F /* Sources */,
+				9070B676271F69E1007B571F /* Resources */,
 			);
 			path = DesafioPremierSoft;
 			sourceTree = "<group>";
 		};
-		9070B675271F680F007B571F /* New Group */ = {
+		9070B675271F680F007B571F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9070B645271F67A5007B571F /* AppDelegate.swift */,
 			);
-			path = "New Group";
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9070B676271F69E1007B571F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9070B650271F67A6007B571F /* LaunchScreen.storyboard */,
+				9070B64E271F67A6007B571F /* Assets.xcassets */,
+				9070B653271F67A6007B571F /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9070B677271F69FC007B571F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9070B678271F6A7E007B571F /* ViewController.swift */,
+				9070B679271F6A7E007B571F /* ViewController.xib */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9070B652271F67A6007B571F /* LaunchScreen.storyboard in Resources */,
+				9070B67B271F6A7E007B571F /* ViewController.xib in Resources */,
 				9070B64F271F67A6007B571F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9070B64A271F67A5007B571F /* ViewController.swift in Sources */,
+				9070B67A271F6A7E007B571F /* ViewController.swift in Sources */,
 				9070B646271F67A5007B571F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +425,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYU42XWBK4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DesafioPremierSoft/Info.plist;
+				INFOPLIST_FILE = DesafioPremierSoft/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -433,7 +453,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UYU42XWBK4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DesafioPremierSoft/Info.plist;
+				INFOPLIST_FILE = DesafioPremierSoft/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
