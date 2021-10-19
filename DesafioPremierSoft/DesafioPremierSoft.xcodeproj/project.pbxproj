@@ -12,6 +12,8 @@
 		9070B652271F67A6007B571F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9070B650271F67A6007B571F /* LaunchScreen.storyboard */; };
 		9070B67A271F6A7E007B571F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B678271F6A7E007B571F /* ViewController.swift */; };
 		9070B67B271F6A7E007B571F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9070B679271F6A7E007B571F /* ViewController.xib */; };
+		9070B67D271F6FE3007B571F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B67C271F6FE3007B571F /* ViewModel.swift */; };
+		9070B67F271F6FF0007B571F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B67E271F6FF0007B571F /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		9070B662271F67A7007B571F /* DesafioPremierSoftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioPremierSoftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9070B678271F6A7E007B571F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9070B679271F6A7E007B571F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		9070B67C271F6FE3007B571F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9070B67E271F6FF0007B571F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			children = (
 				9070B678271F6A7E007B571F /* ViewController.swift */,
 				9070B679271F6A7E007B571F /* ViewController.xib */,
+				9070B67C271F6FE3007B571F /* ViewModel.swift */,
+				9070B67E271F6FF0007B571F /* Model.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -255,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9070B67A271F6A7E007B571F /* ViewController.swift in Sources */,
+				9070B67D271F6FE3007B571F /* ViewModel.swift in Sources */,
 				9070B646271F67A5007B571F /* AppDelegate.swift in Sources */,
+				9070B67F271F6FF0007B571F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
