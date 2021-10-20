@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getData()
-        
+        viewModel.getCandidatesPercentage()
+        print(viewModel.apiSumAge/110)
         
     }
     
