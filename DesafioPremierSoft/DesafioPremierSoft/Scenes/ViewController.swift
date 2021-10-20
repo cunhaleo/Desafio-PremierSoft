@@ -15,7 +15,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewModel.getData()
         viewModel.getCandidatesPercentage()
-        print(viewModel.apiSumAge/110)
+        print("Soma de idade API .NET: \(viewModel.apiSumAge)")
+        print("Candidato API .NET mais novo: \(viewModel.apiYoungerCandidate)")
+        print("Candidato iOS mais velho: \(viewModel.iosOlderCandidate)")
+        print("Idade média candidatos QA: \(viewModel.qaAvgAge)")
+        print("Número de estados diferentes: \(viewModel.numStates)")
+        
         
     }
     
