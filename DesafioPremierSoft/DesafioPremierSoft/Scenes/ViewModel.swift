@@ -10,12 +10,15 @@ import Foundation
 class ViewModel {
     
     var separatedCandidates: [[String.SubSequence]]  = []
+    var arrayCandidates: [[String]] = []
     
     var apiCount: Int = 0
     var iosCount: Int = 0
     var qaCount: Int = 0
     
     var apiSumAge: Int = 0
+    var apiYoungerCandidate: String = " "
+    var apiYougerAge: Int = 100
     
     func getData(){
         if let url = URL(string: "https://raw.githubusercontent.com/premiersoft/AppAcademyChallenge2/main/AppAcademy_Candidates.csv") {
@@ -23,9 +26,18 @@ class ViewModel {
                 let contents = try String(contentsOf: url)
                 let candidates = contents.split(whereSeparator: \.isNewline)
                 for candidate in candidates {
-                    separatedCandidates.append(candidate.split(separator: ";"))
+                    let atribute = candidate.split(separator: ";")
+                    separatedCandidates.append(atribute)
                 }
-                print(separatedCandidates)
+                var i: Int = 0
+                for candidate in separatedCandidates {
+                    arrayCandidates.append(["Candidato \(i)"])
+                    for atribute in candidate {
+                        arrayCandidates[i].append(String(atribute))
+                    }
+                    i = i + 1
+                }
+                print(arrayCandidates)
             } catch {
                 // contents could not be loaded
             }
@@ -40,18 +52,22 @@ class ViewModel {
         qaCount = 0
         
         apiSumAge = 0
+        apiYougerAge = 100
         
-        for candidate in separatedCandidates  {
+        for candidate in arrayCandidates  {
             
             
-            if candidate[1] == "API .NET" {
+            if candidate[2] == "API .NET" {
                 apiCount += 1
-                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate[2])
+                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate[3])
+                if apiYougerAge > makeFirstWordAnInteger(candidate[3]) {
+                    apiYoungerCandidate = candidate[1]
+                }
             }
-            else if candidate[1] == "iOS" {
+            else if candidate[2] == "iOS" {
                 iosCount += 1
             }
-            else if candidate[1] == "QA" {
+            else if candidate[2] == "QA" {
                 qaCount += 1
             }
             else {
@@ -62,7 +78,7 @@ class ViewModel {
      
     }
     
-    func makeFirstWordAnInteger(_ myString: String.SubSequence) -> Int {
+    func makeFirstWordAnInteger(_ myString: String) -> Int {
         
             if let firstWord = myString.components(separatedBy: " ").first {
                 let myAge = Int(firstWord)
