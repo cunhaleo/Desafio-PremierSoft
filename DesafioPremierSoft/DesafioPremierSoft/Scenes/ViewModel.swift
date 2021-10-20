@@ -11,6 +11,7 @@ class ViewModel {
     
     var separatedCandidates: [[String.SubSequence]]  = []
     var arrayCandidates: [[String]] = []
+    var sortedArrayCandidates: [[String]] = []
     
     var apiCount: Int = 0
     var iosCount: Int = 0
@@ -46,6 +47,7 @@ class ViewModel {
                     }
                     i = i + 1
                 }
+                arrayCandidates.remove(at: 0)
                 print(arrayCandidates)
             } catch {
                 // contents could not be loaded
@@ -113,6 +115,10 @@ class ViewModel {
                 return myAge ?? 0
             }
         return 0
+    }
+    func sortByAlphabeticalOrder() {
+    //    arrayCandidates.sort(by: {$0. > $1.date.timeIntervalSinceNow})
+        
     }
 }
  

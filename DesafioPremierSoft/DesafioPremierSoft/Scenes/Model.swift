@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Candidate: Codable {
+struct Candidate {
     
     let Nome: String
     let Vaga: String
