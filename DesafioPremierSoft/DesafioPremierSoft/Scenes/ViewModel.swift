@@ -11,7 +11,7 @@ class ViewModel {
     
     var separatedCandidates: [[String.SubSequence]]  = []
     var arrayCandidates: [[String]] = []
-    var sortedArrayCandidates: [[String]] = []
+    var modelCandidates: [Candidate] = []
     
     var apiCount: Int = 0
     var iosCount: Int = 0
@@ -35,12 +35,12 @@ class ViewModel {
             do {
                 let contents = try String(contentsOf: url)
                 let candidates = contents.split(whereSeparator: \.isNewline)
-                for candidate in candidates {
-                    let atribute = candidate.split(separator: ";")
+                for candidate in candidates {                       // Separando cada candidatos por linha
+                    let atribute = candidate.split(separator: ";")  // Para cada candidato, separando seus atributos
                     separatedCandidates.append(atribute)
                 }
                 var i: Int = 0
-                for candidate in separatedCandidates {
+                for candidate in separatedCandidates {              // Passando do tipo SubString para String
                     arrayCandidates.append(["Candidato \(i)"])
                     for atribute in candidate {
                         arrayCandidates[i].append(String(atribute))
@@ -48,7 +48,14 @@ class ViewModel {
                     i = i + 1
                 }
                 arrayCandidates.remove(at: 0)
-                print(arrayCandidates)
+                for candidate in arrayCandidates {                  // Finalmente, criando meu array com o modelo de dado
+                    let name = candidate[1]
+                    let vaga = candidate[2]
+                    let idade = candidate[3]
+                    let estado = candidate[4]
+                    let model = Candidate(Nome: name, Vaga: vaga, Idade: idade, Estado: estado)
+                    modelCandidates.append(model)
+                }
             } catch {
                 // contents could not be loaded
             }
@@ -73,29 +80,29 @@ class ViewModel {
         
         var statesList = Set<String>()
         
-        for candidate in arrayCandidates  {
+        for candidate in modelCandidates  {
             
-            if candidate[2] == "API .NET" {
+            if candidate.Vaga == "API .NET" {
                 apiCount += 1
-                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate[3])
-                if apiYougerAge > makeFirstWordAnInteger(candidate[3]) {
-                    apiYougerAge = makeFirstWordAnInteger(candidate[3])
-                    apiYoungerCandidate = candidate[1]
+                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate.Idade)
+                if apiYougerAge > makeFirstWordAnInteger(candidate.Idade) {
+                    apiYougerAge = makeFirstWordAnInteger(candidate.Idade)
+                    apiYoungerCandidate = candidate.Nome
                 }
-                statesList.insert(candidate[4])
+                statesList.insert(candidate.Estado)
             }
-            else if candidate[2] == "iOS" {
+            else if candidate.Vaga == "iOS" {
                 iosCount += 1
-                if iosOlderAge < makeFirstWordAnInteger(candidate[3]) {
-                    iosOlderAge = makeFirstWordAnInteger(candidate[3])
-                    iosOlderCandidate = candidate[1]
+                if iosOlderAge < makeFirstWordAnInteger(candidate.Idade) {
+                    iosOlderAge = makeFirstWordAnInteger(candidate.Idade)
+                    iosOlderCandidate = candidate.Nome
                 }
-                statesList.insert(candidate[4])
+                statesList.insert(candidate.Estado)
             }
-            else if candidate[2] == "QA" {
+            else if candidate.Vaga == "QA" {
                 qaCount += 1
-                qaSumAge += makeFirstWordAnInteger(candidate[3])
-                statesList.insert(candidate[4])
+                qaSumAge += makeFirstWordAnInteger(candidate.Idade)
+                statesList.insert(candidate.Estado)
             }
             else {
                 print("Trilha Nao Identificada: \(candidate)")
@@ -117,8 +124,11 @@ class ViewModel {
         return 0
     }
     func sortByAlphabeticalOrder() {
-    //    arrayCandidates.sort(by: {$0. > $1.date.timeIntervalSinceNow})
-        
+        modelCandidates = modelCandidates.sorted { (channel1, channel2) -> Bool in
+            let channelName1 = channel1.Nome
+            let channelName2 = channel2.Nome
+                    return (channelName1.localizedCaseInsensitiveCompare(channelName2) == .orderedAscending)
+        }
     }
 }
  
