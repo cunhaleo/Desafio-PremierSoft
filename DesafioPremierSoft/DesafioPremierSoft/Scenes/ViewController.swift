@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         viewModel.getData()
         viewModel.getCandidatesPercentage()
+        viewModel.sortByAlphabeticalOrder()
         print("Soma de idade API .NET: \(viewModel.apiSumAge)")
         print("Candidato API .NET mais novo: \(viewModel.apiYoungerCandidate)")
         print("Candidato iOS mais velho: \(viewModel.iosOlderCandidate)")
