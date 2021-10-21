@@ -80,29 +80,29 @@ class ViewModel {
         
         var statesList = Set<String>()
         
-        for candidate in arrayCandidates  {
+        for candidate in modelCandidates  {
             
-            if candidate[2] == "API .NET" {
+            if candidate.Vaga == "API .NET" {
                 apiCount += 1
-                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate[3])
-                if apiYougerAge > makeFirstWordAnInteger(candidate[3]) {
-                    apiYougerAge = makeFirstWordAnInteger(candidate[3])
-                    apiYoungerCandidate = candidate[1]
+                apiSumAge = apiSumAge + makeFirstWordAnInteger(candidate.Idade)
+                if apiYougerAge > makeFirstWordAnInteger(candidate.Idade) {
+                    apiYougerAge = makeFirstWordAnInteger(candidate.Idade)
+                    apiYoungerCandidate = candidate.Nome
                 }
-                statesList.insert(candidate[4])
+                statesList.insert(candidate.Estado)
             }
-            else if candidate[2] == "iOS" {
+            else if candidate.Vaga == "iOS" {
                 iosCount += 1
-                if iosOlderAge < makeFirstWordAnInteger(candidate[3]) {
-                    iosOlderAge = makeFirstWordAnInteger(candidate[3])
-                    iosOlderCandidate = candidate[1]
+                if iosOlderAge < makeFirstWordAnInteger(candidate.Idade) {
+                    iosOlderAge = makeFirstWordAnInteger(candidate.Idade)
+                    iosOlderCandidate = candidate.Nome
                 }
-                statesList.insert(candidate[4])
+                statesList.insert(candidate.Estado)
             }
-            else if candidate[2] == "QA" {
+            else if candidate.Vaga == "QA" {
                 qaCount += 1
-                qaSumAge += makeFirstWordAnInteger(candidate[3])
-                statesList.insert(candidate[4])
+                qaSumAge += makeFirstWordAnInteger(candidate.Idade)
+                statesList.insert(candidate.Estado)
             }
             else {
                 print("Trilha Nao Identificada: \(candidate)")
