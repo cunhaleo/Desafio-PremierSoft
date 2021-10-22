@@ -12,6 +12,8 @@ class ViewModel {
     var separatedCandidates: [[String.SubSequence]]  = []
     var arrayCandidates: [[String]] = []
     var modelCandidates: [Candidate] = []
+    var iosInstructor: [Candidate] = []
+    var apiInstructor: [Candidate] = []
     
     var apiCount: Int = 0
     var iosCount: Int = 0
@@ -123,12 +125,63 @@ class ViewModel {
             }
         return 0
     }
+    
     func sortByAlphabeticalOrder() {
         modelCandidates = modelCandidates.sorted { (channel1, channel2) -> Bool in
             let channelName1 = channel1.Nome
             let channelName2 = channel2.Nome
                     return (channelName1.localizedCaseInsensitiveCompare(channelName2) == .orderedAscending)
         }
+    }
+    
+    func isPrime(_ number: Int) -> Bool {
+        return number > 1 && !(2..<number).contains { number % $0 == 0 }
+    }
+    
+    func getFirstName(_ myString: String) -> String {
+        if let subString = myString.components(separatedBy: " ").first {
+            let firstName = String(subString)
+            return firstName
+        }
+        else{
+            return myString
+        }
+    }
+    func getLastName(_ myString: String) -> String {
+        if let subString = myString.components(separatedBy: " ").last {
+            let lastName = String(subString)
+            return lastName
+        }
+        else{
+            return myString
+        }
+    }
+    
+    func getInstructors () {
+        
+        for candidate in modelCandidates {
+            
+            if candidate.Vaga != "iOS" {
+                
+                if candidate.Estado == "SC" {
+                    
+                    if makeFirstWordAnInteger(candidate.Idade) > 20 {
+                        
+                        if isPrime(makeFirstWordAnInteger(candidate.Idade)) {
+                            
+                            if getLastName(candidate.Nome).first == "V" {
+                                
+                                iosInstructor.append(candidate)
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        print(iosInstructor)
+        
+        
     }
 }
  
