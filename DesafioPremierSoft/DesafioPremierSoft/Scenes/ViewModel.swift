@@ -113,7 +113,6 @@ class ViewModel {
                 print("Trilha Nao Identificada: \(candidate)")
             }
         }
-        print(statesList)
         numStates = statesList.count
         qaAvgAge = qaSumAge/qaCount
         total = qaCount + iosCount + apiCount
@@ -199,7 +198,6 @@ class ViewModel {
                 }
             }
         }
-        print(iosInstructor)
         
         for candidate in modelCandidates {
             
@@ -224,7 +222,6 @@ class ViewModel {
                 }
             }
         }
-        print(apiInstructor)
     }
     
 }
