@@ -15,10 +15,13 @@ class ViewModel {
     var iosInstructor: Candidate = Candidate(Nome: "", Vaga: "", Idade: "", Estado: "")
     var apiInstructor: Candidate = Candidate(Nome: "", Vaga: "", Idade: "", Estado: "")
     
-    var apiCount: Int = 0
-    var iosCount: Int = 0
-    var qaCount: Int = 0
-    var total: Int = 0
+    var apiCount: Double = 0
+    var iosCount: Double = 0
+    var qaCount: Double = 0
+    var total: Double = 0
+    var iosPercentage: String = ""
+    var apiPercentage: String = ""
+    var qaPercentage: String = ""
     
     var apiSumAge: Int = 0
     var apiYoungerCandidate: String = " "
@@ -27,8 +30,8 @@ class ViewModel {
     var iosOlderCandidate: String = " "
     var iosOlderAge: Int = 0
     
-    var qaSumAge: Int = 0
-    var qaAvgAge: Int = 0
+    var qaSumAge: Double = 0
+    var qaAvgAge: Double = 0
     
     var numStates: Int = 0
     
@@ -103,7 +106,7 @@ class ViewModel {
             }
             else if candidate.Vaga == "QA" {
                 qaCount += 1
-                qaSumAge += makeFirstWordAnInteger(candidate.Idade)
+                qaSumAge += Double(makeFirstWordAnInteger(candidate.Idade))
                 statesList.insert(candidate.Estado)
             }
             else {
@@ -114,7 +117,9 @@ class ViewModel {
         numStates = statesList.count
         qaAvgAge = qaSumAge/qaCount
         total = qaCount + iosCount + apiCount
-        print("qa = \(qaCount), ios = \(iosCount), api = \(apiCount), total = \(total)")
+        iosPercentage = String(format: "Candidatos iOS: %.2f%%", iosCount/total*100)
+        apiPercentage = String(format: "Candidatos API .NET: %.2f%%", apiCount/total*100)
+        qaPercentage = String(format: "Candidatos QA: %.2f%%", qaCount/total*100)
     }
     
     func makeFirstWordAnInteger(_ myString: String) -> Int {

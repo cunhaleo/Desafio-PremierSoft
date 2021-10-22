@@ -14,6 +14,10 @@
 		9070B67B271F6A7E007B571F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9070B679271F6A7E007B571F /* ViewController.xib */; };
 		9070B67D271F6FE3007B571F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B67C271F6FE3007B571F /* ViewModel.swift */; };
 		9070B67F271F6FF0007B571F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9070B67E271F6FF0007B571F /* Model.swift */; };
+		90CC16902723745C00999261 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC168E2723745C00999261 /* ListTableViewController.swift */; };
+		90CC16912723745C00999261 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CC168F2723745C00999261 /* ListTableViewController.xib */; };
+		90CC16952723748800999261 /* CandidatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC16932723748800999261 /* CandidatesTableViewCell.swift */; };
+		90CC16962723748800999261 /* CandidatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CC16942723748800999261 /* CandidatesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		9070B679271F6A7E007B571F /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		9070B67C271F6FE3007B571F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9070B67E271F6FF0007B571F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		90CC168E2723745C00999261 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		90CC168F2723745C00999261 /* ListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
+		90CC16932723748800999261 /* CandidatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesTableViewCell.swift; sourceTree = "<group>"; };
+		90CC16942723748800999261 /* CandidatesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandidatesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,12 +129,32 @@
 		9070B677271F69FC007B571F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				90CC168D2723743400999261 /* ListOfCandidates */,
 				9070B678271F6A7E007B571F /* ViewController.swift */,
 				9070B679271F6A7E007B571F /* ViewController.xib */,
 				9070B67C271F6FE3007B571F /* ViewModel.swift */,
 				9070B67E271F6FF0007B571F /* Model.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		90CC168D2723743400999261 /* ListOfCandidates */ = {
+			isa = PBXGroup;
+			children = (
+				90CC16922723746200999261 /* CandidateCell */,
+				90CC168E2723745C00999261 /* ListTableViewController.swift */,
+				90CC168F2723745C00999261 /* ListTableViewController.xib */,
+			);
+			path = ListOfCandidates;
+			sourceTree = "<group>";
+		};
+		90CC16922723746200999261 /* CandidateCell */ = {
+			isa = PBXGroup;
+			children = (
+				90CC16932723748800999261 /* CandidatesTableViewCell.swift */,
+				90CC16942723748800999261 /* CandidatesTableViewCell.xib */,
+			);
+			path = CandidateCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +262,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9070B652271F67A6007B571F /* LaunchScreen.storyboard in Resources */,
+				90CC16962723748800999261 /* CandidatesTableViewCell.xib in Resources */,
 				9070B67B271F6A7E007B571F /* ViewController.xib in Resources */,
 				9070B64F271F67A6007B571F /* Assets.xcassets in Resources */,
+				90CC16912723745C00999261 /* ListTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +293,9 @@
 				9070B67A271F6A7E007B571F /* ViewController.swift in Sources */,
 				9070B67D271F6FE3007B571F /* ViewModel.swift in Sources */,
 				9070B646271F67A5007B571F /* AppDelegate.swift in Sources */,
+				90CC16952723748800999261 /* CandidatesTableViewCell.swift in Sources */,
 				9070B67F271F6FF0007B571F /* Model.swift in Sources */,
+				90CC16902723745C00999261 /* ListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
