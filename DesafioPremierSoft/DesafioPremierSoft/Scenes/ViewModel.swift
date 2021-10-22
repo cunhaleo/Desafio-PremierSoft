@@ -12,8 +12,8 @@ class ViewModel {
     var separatedCandidates: [[String.SubSequence]]  = []
     var arrayCandidates: [[String]] = []
     var modelCandidates: [Candidate] = []
-    var iosInstructor: [Candidate] = []
-    var apiInstructor: [Candidate] = []
+    var iosInstructor: Candidate = Candidate(Nome: "", Vaga: "", Idade: "", Estado: "")
+    var apiInstructor: Candidate = Candidate(Nome: "", Vaga: "", Idade: "", Estado: "")
     
     var apiCount: Int = 0
     var iosCount: Int = 0
@@ -147,6 +147,7 @@ class ViewModel {
             return myString
         }
     }
+    
     func getLastName(_ myString: String) -> String {
         if let subString = myString.components(separatedBy: " ").last {
             let lastName = String(subString)
@@ -156,6 +157,21 @@ class ViewModel {
             return myString
         }
     }
+    
+    
+
+    func countVowels(input: String) -> Int {
+        let vowels: [Character] = ["a", "e", "i", "o", "u"]
+        var vowelCount: Int = 0
+        
+        for ch in input.lowercased() {
+            if (vowels.contains(ch)) {
+                vowelCount += 1
+            }
+        }
+        return vowelCount
+    }
+
     
     func getInstructors () {
         
@@ -171,17 +187,40 @@ class ViewModel {
                             
                             if getLastName(candidate.Nome).first == "V" {
                                 
-                                iosInstructor.append(candidate)
+                                iosInstructor = candidate
                             }
                         }
                     }
                 }
             }
-
         }
         print(iosInstructor)
         
-        
+        for candidate in modelCandidates {
+            
+                if candidate.Vaga != "API .NET" {
+                    
+                    if candidate.Estado == "SC" {
+                        
+                        if makeFirstWordAnInteger(candidate.Idade) < 31 && makeFirstWordAnInteger(candidate.Idade) > 21 { // Década de 1990
+                            
+                            if isPrime(makeFirstWordAnInteger(candidate.Idade)) {
+                                
+                               	 if getLastName(candidate.Nome).last == "k" {
+                                     
+                                     if countVowels(input: getFirstName(candidate.Nome)) == 3 {
+                                    
+                                    apiInstructor = candidate
+                                
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        print(apiInstructor)
     }
+    
 }
  
