@@ -41,8 +41,6 @@ class ListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CandidatesTableViewCell") as? CandidatesTableViewCell {
             cell.setupcell(viewModel.modelCandidates[indexPath.row])
-            print(indexPath.row)
-            print("entrou aqui")
             return cell
         }
         else {

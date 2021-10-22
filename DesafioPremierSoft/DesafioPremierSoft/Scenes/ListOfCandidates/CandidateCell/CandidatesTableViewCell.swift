@@ -22,7 +22,6 @@ class CandidatesTableViewCell: UITableViewCell {
 
     func setupcell(_ model: Candidate) {
         labelName.text = model.Nome
-        print("Aqui: \(model.Nome)")
         labelAge.text = model.Idade
         labelVaga.text = model.Vaga
         labelState.text = model.Estado
