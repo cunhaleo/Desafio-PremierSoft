@@ -140,7 +140,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstItem="nk7-pT-awR" firstAttribute="top" secondItem="2Ib-Ct-EoF" secondAttribute="top" id="bXi-p0-Fa3"/>
                         <constraint firstItem="2Ib-Ct-EoF" firstAttribute="bottom" secondItem="nk7-pT-awR" secondAttribute="bottom" id="dxx-A8-1Ks"/>
@@ -183,9 +183,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
