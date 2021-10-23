@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var labeliOSpercentage: UILabel!
     @IBOutlet weak var labelAPIpercetage: UILabel!
@@ -30,6 +31,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         title = "Home"
         navigationController?.delegate = self
+        scrollView.delegate = self
 
         viewModel.getData()
         viewModel.getCandidatesPercentage()
